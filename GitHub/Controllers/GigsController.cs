@@ -1,7 +1,6 @@
 ﻿using GitHub.Models;
 using GitHub.ViewModels;
 using Microsoft.AspNet.Identity;
-using System;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -29,11 +28,15 @@ namespace GitHub.Controllers
         [HttpPost]
         public ActionResult Create(GigFormViewModel vm)
         {
-                   
+            if (!ModelState.IsValid)
+            {
+                vm.Genres = _ctx.Genre.ToList();
+                return View("Create", vm);
+            }
             var gig = new Gig
             {
                 ArtistId = User.Identity.GetUserId(),
-                DateTime = DateTime.Parse(string.Format("{0} {1}", vm.Date, vm.Time)),
+                DateTime = vm.GetDateTime(),
                 GenreId = vm.Genre,
                 Venue = vm.Venue
             };
