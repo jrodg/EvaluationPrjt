@@ -205,6 +205,14 @@
     <Compile Include="Migrations\201704051329202_GitInit.Designer.cs">
       <DependentUpon>201704051329202_GitInit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704051423421_createGigTbls.cs" />
+    <Compile Include="Migrations\201704051423421_createGigTbls.Designer.cs">
+      <DependentUpon>201704051423421_createGigTbls.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704051530253_overrideConventionsForGigsAndGenre.cs" />
+    <Compile Include="Migrations\201704051530253_overrideConventionsForGigsAndGenre.Designer.cs">
+      <DependentUpon>201704051530253_overrideConventionsForGigsAndGenre.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -290,6 +298,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201704051329202_GitInit.resx">
       <DependentUpon>201704051329202_GitInit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704051423421_createGigTbls.resx">
+      <DependentUpon>201704051423421_createGigTbls.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704051530253_overrideConventionsForGigsAndGenre.resx">
+      <DependentUpon>201704051530253_overrideConventionsForGigsAndGenre.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
