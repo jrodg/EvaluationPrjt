@@ -1,35 +1,51 @@
-﻿
+﻿@model GitHub.Models.ContactModel
 @{
     ViewBag.Title = "Contact Us";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="col-md-12 mb-margin-bottom-30">
+@using (Html.BeginForm("Contact", "Home"))
+{
+
     <div class="headline"><h2>Contact Form</h2></div>
-    
-    <form class="form-horizontal" method="post">
-        <label>Name</label>
-        <div class="row margin-bottom-20">
-            <div class="col-md-7 col-md-offset-0">
-                <input type="text" class="form-control">
-            </div>
+
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name)
+
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Name)
+    </div>
+
+
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Email)
+        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+
+        @Html.ValidationMessageFor(m => m.Email)
+    </div>
+
+
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Message)
+            @Html.TextAreaFor(m => m.Message, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Message)
         </div>
 
-        <label>Email <span class="color-red">*</span></label>
-        <div class="row margin-bottom-20">
-            <div class="col-md-7 col-md-offset-0">
-                <input type="text" class="form-control">
-            </div>
-        </div>
-
-        <label>Message</label>
-        <div class="row margin-bottom-20">
-            <div class="col-md-11 col-md-offset-0">
-                <textarea rows="8" class="form-control"></textarea>
-            </div>
-        </div>
 
         <p><button type="submit" class="btn btn-u">Send Message</button></p>
-    </form>
-</div><!--/col-md-9-->
+
+
+}
+
+
+@section Scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+}
+
 

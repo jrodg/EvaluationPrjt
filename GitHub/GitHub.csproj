@@ -222,9 +222,14 @@
     <Compile Include="Migrations\201704051927482_AddForeingKeyPropertiesToGig.Designer.cs">
       <DependentUpon>201704051927482_AddForeingKeyPropertiesToGig.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704070401377_ContactModel.cs" />
+    <Compile Include="Migrations\201704070401377_ContactModel.Designer.cs">
+      <DependentUpon>201704070401377_ContactModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
+    <Compile Include="Models\ContactModel.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\Gig.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -323,6 +328,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704051927482_AddForeingKeyPropertiesToGig.resx">
       <DependentUpon>201704051927482_AddForeingKeyPropertiesToGig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704070401377_ContactModel.resx">
+      <DependentUpon>201704070401377_ContactModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
