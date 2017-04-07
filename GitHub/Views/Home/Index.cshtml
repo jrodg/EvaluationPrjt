@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<GitHub.Models.Topic>
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -52,3 +53,11 @@
         <div class="replies span12"></div>
     </div>
 </div>
+
+@foreach (var topic in Model)
+{
+    <div>@topic.Title</div>
+    <div>@topic.Body</div>
+    <div>@topic.Created</div>
+}
+

@@ -2,6 +2,7 @@
 using GitHub.Models;
 using GitHub.Services;
 using System;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace GitHub.Controllers
@@ -9,14 +10,22 @@ namespace GitHub.Controllers
     public class HomeController : Controller
     {
         private readonly ContactModel cm;
+        private IMessageBoardRepo _mrepo;
 
-        public HomeController(ContactModel _cm, IMailService ms)
+        public HomeController(ContactModel _cm, 
+            IMailService ms,
+            IMessageBoardRepo mrepo)
         {
             cm = _cm;
+            _mrepo = mrepo;
         }
         public ActionResult Index()
         {
-            return View();
+            var topics = _mrepo.GetTopics()
+                .OrderByDescending(d=>d.Created)
+                .Take(10)
+                .ToList();
+            return View(topics);
         }
 
         public ActionResult About()

@@ -63,6 +63,10 @@ namespace GitHub.App_Start
         {
             kernel.Bind<IMailService>().To<MailService>().InRequestScope();
             kernel.Bind<ContactModel>().To<ContactModel>().InRequestScope();
+            kernel.Bind<IMessageBoardRepo>().To<MessageBoardRepository>().InRequestScope();
+            kernel.Bind<MessageBoardRepository>().To<MessageBoardRepository>().InRequestScope();
+            kernel.Bind<ApplicationDbContext>().To<ApplicationDbContext>().InRequestScope();
+
         }        
     }
 }

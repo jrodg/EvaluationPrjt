@@ -8,6 +8,8 @@ namespace GitHub.Models
         public DbSet<Gig> Gig { get; set; }
         public DbSet<Genre> Genre { get; set; }
         public DbSet<ContactModel> Contacts { get; set; }
+        public DbSet<Reply> Replies { get; set; }
+        public DbSet<Topic> Topics { get; set; }
         public ApplicationDbContext()
             : base("GitHub", throwIfV1Schema: false)
         {
