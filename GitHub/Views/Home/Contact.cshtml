@@ -28,14 +28,20 @@
 
 
 
-        <div class="form-group">
-            @Html.LabelFor(m => m.Message)
-            @Html.TextAreaFor(m => m.Message, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.Message)
-        </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Message)
+        @Html.TextAreaFor(m => m.Message, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Message)
+    </div>
 
 
-        <p><button type="submit" class="btn btn-u">Send Message</button></p>
+    <p>
+        <button type="submit" class="btn btn-u">Send Message</button>
+        @if (ViewBag.MailSent!= null && ViewBag.MailSent)
+        {
+            <div>Mail Sent!</div>
+        }
+    </p>
 
 
 }
